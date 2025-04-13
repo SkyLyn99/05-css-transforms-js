@@ -54,3 +54,35 @@ body {
   font-size: 26px;
   text-shadow: 0 0 10px rgba(181, 194, 232, 0.3);
 }
+/* Shake animation */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Class to trigger the shake animation */
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+/* Rapid random shake animation */
+@keyframes rapid-shake {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-10px, -10px); }
+  20% { transform: translate(10px, -10px); }
+  30% { transform: translate(-10px, 10px); }
+  40% { transform: translate(10px, 10px); }
+  50% { transform: translate(-5px, -5px); }
+  60% { transform: translate(5px, -5px); }
+  70% { transform: translate(-5px, 5px); }
+  80% { transform: translate(5px, 5px); }
+  90% { transform: translate(0, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Class to trigger the rapid shake animation */
+.rapid-shake {
+  animation: rapid-shake 0.7s ease-in-out;
+}

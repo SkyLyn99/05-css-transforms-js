@@ -1,5 +1,7 @@
-// Get the element where the answer will be displayed.
+// Get the Magic 8-Ball and answer elements.
+const magicBall = document.getElementById("magicBall");
 const answer = document.getElementById("answer");
+
 // Array of possible answers for the Magic 8-Ball.
 const answers = [
   "It is certain",
@@ -25,6 +27,19 @@ const answers = [
 ];
 
 // Event listener for the Magic 8-Ball click.
-document.getElementById("magicBall").addEventListener("click", function() {
-  answer.innerText = answers[Math.floor(Math.random() * answers.length)];
-});
+magicBall.addEventListener("click", function() {
+  // Clear the current answer.
+  answer.innerText = "";
+
+  // Add the rapid-shake class to trigger the animation.
+  magicBall.classList.add("rapid-shake");
+
+  // Wait for the animation to finish (0.7s) before showing the answer.
+  setTimeout(function() {
+    // Remove the rapid-shake class after the animation.
+    magicBall.classList.remove("rapid-shake");
+      // Display a random answer.
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      answer.innerText = answers[randomIndex];
+    }, 700); // Match the duration of the rapid-shake animation.
+  });
